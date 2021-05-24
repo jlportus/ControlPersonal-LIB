@@ -1,7 +1,7 @@
 plugins {
-	id 'org.springframework.boot' version '2.4.6'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id 'java-library'
+	id 'eclipse'
 }
 
 group = 'es.mde'
@@ -13,8 +13,7 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
 }
 
 test {
