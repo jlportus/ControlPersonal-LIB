@@ -1,23 +1,20 @@
 package es.mde.ControlPersonalLIB.personas;
 
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.List;
 
 import es.mde.ControlPersonalLIB.ausencias.Ausencia;
 import es.mde.ControlPersonalLIB.ausencias.AusenciaImpl;
-import es.mde.ControlPersonalLIB.ausencias.SolicitarPermiso;
-import es.mde.ControlPersonalLIB.ausencias.TipoPermiso;
+import es.mde.ControlPersonalLIB.permisos.Permiso;
+import es.mde.ControlPersonalLIB.permisos.SolicitarPermiso;
 
-public class PersonaConPermiso extends Persona implements Permiso, SolicitarPermiso {
+public class PersonaConPermiso extends Persona implements SolicitarPermiso {
 
-	private int diasPermiso;
-	private int diasPermisoActuales;
-	private int diasVacaciones;
-	private int diasVacacionesActuales;
-	
-	Map<TipoPermiso, Integer> permiso;
-	
+	private HashSet permiso;
+	private List<Ausencia> ausencias;
+
 	private int trienios;
 
 	public int getTrienios() {
@@ -27,53 +24,32 @@ public class PersonaConPermiso extends Persona implements Permiso, SolicitarPerm
 	public void setTrienios(int trienios) {
 		this.trienios = trienios;
 	}
-
-	public void setDiasPermiso(int diasPermiso) {
-		this.diasPermiso = diasPermiso;// los dias de permiso se calcularan con respecto a los trienios y/o festivos
-										// locales (pueden ser un properties)
+	
+	public HashSet getPermiso() {
+		return permiso;
 	}
 
-	public void setDiasVacaciones(int diasVacaciones) {
-		this.diasVacaciones = diasVacaciones; // los dias de vacaciones se calcularan con respecto a los trienios
-	}
-
-	@Override
-	public int getDiasPermiso() {
-		return diasPermiso;
-	}
-
-	@Override
-	public int getDiasVacaciones() {
-		return diasVacaciones;
+	public List<Ausencia> getAusencias() {
+		return ausencias;
 	}
 
 	public PersonaConPermiso() {
 		super();
+		this.permiso = new HashSet();
+		this.ausencias = new ArrayList<>();
 	}
 
 	@Override
-	public Ausencia solicitarDia(Date fechaInicio, Date fechaFin , TipoPermiso t) {
+	public void solicitarDia(Date fechaInicio, Date fechaFin, Permiso permiso) {
 		int diasSolicitados = fechaFin.compareTo(fechaInicio);
-		Ausencia ausencia = null;
+		int diasRestantes = permiso.getDiasRestantes();
 
-		if (diasPermisoActuales > diasSolicitados) {
-			diasPermisoActuales -= diasSolicitados;
-			ausencia = new AusenciaImpl(fechaInicio, fechaFin);
+		if (diasRestantes >= diasSolicitados) {
+			permiso.setDiasRestantes(diasRestantes -= diasSolicitados);
+			ausencias.add(new AusenciaImpl(fechaInicio, fechaFin));
 		}
 
-		return ausencia;
-	}
-
-	public Map<TipoPermiso, Integer> getPermiso() {
-		permiso = new HashMap<>();
 		
-		return permiso;
 	}
-
-	public void setPermiso(Map<TipoPermiso, Integer> permiso) {
-		this.permiso = permiso;
-	}
-
-	
 
 }

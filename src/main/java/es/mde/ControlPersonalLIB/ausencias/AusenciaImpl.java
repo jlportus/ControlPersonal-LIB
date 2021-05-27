@@ -1,6 +1,5 @@
 package es.mde.ControlPersonalLIB.ausencias;
 
-import java.time.Instant;
 import java.util.Date;
 
 public class AusenciaImpl implements Ausencia {
