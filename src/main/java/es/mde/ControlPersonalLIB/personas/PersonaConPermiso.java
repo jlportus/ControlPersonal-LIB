@@ -1,9 +1,9 @@
 package es.mde.ControlPersonalLIB.personas;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
-import java.util.List;
 
 import es.mde.ControlPersonalLIB.ausencias.Ausencia;
 import es.mde.ControlPersonalLIB.ausencias.AusenciaImpl;
@@ -12,10 +12,27 @@ import es.mde.ControlPersonalLIB.permisos.SolicitarPermiso;
 
 public class PersonaConPermiso extends Persona implements SolicitarPermiso {
 
-	private HashSet permiso;
-	private List<Ausencia> ausencias;
+	protected Collection<Permiso> permiso;
+
+//	private Collection<Ausencia> ausencias;
 
 	private int trienios;
+
+	public Collection<Permiso> getPermiso() {
+		return permiso;
+	}
+
+	public void setPermiso(Collection<Permiso> permiso) {
+		this.permiso = permiso;
+	}
+
+//	public Collection<Ausencia> getAusencias() {
+//		return ausencias;
+//	}
+//
+//	public void setAusencias(Collection<Ausencia> ausencias) {
+//		this.ausencias = ausencias;
+//	}
 
 	public int getTrienios() {
 		return trienios;
@@ -24,19 +41,11 @@ public class PersonaConPermiso extends Persona implements SolicitarPermiso {
 	public void setTrienios(int trienios) {
 		this.trienios = trienios;
 	}
-	
-	public HashSet getPermiso() {
-		return permiso;
-	}
-
-	public List<Ausencia> getAusencias() {
-		return ausencias;
-	}
 
 	public PersonaConPermiso() {
 		super();
-		this.permiso = new HashSet();
-		this.ausencias = new ArrayList<>();
+
+		this.permiso = new ArrayList<>();
 	}
 
 	@Override
@@ -46,10 +55,9 @@ public class PersonaConPermiso extends Persona implements SolicitarPermiso {
 
 		if (diasRestantes >= diasSolicitados) {
 			permiso.setDiasRestantes(diasRestantes -= diasSolicitados);
-			ausencias.add(new AusenciaImpl(fechaInicio, fechaFin));
+//			ausencias.add(new AusenciaImpl(fechaInicio, fechaFin));
 		}
 
-		
 	}
 
 }
