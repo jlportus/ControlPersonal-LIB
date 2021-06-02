@@ -8,5 +8,6 @@ public interface Ausencia {
 	Date getFechaFin();
 	void setFechaInicio(Date fechaInicio);
 	void setFechaFin(Date fechaFin);
+	boolean isAutorizada();
 	
 }

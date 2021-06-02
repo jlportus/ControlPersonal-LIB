@@ -14,7 +14,7 @@ public class PersonaConPermiso extends Persona implements SolicitarPermiso {
 
 	protected Collection<Permiso> permiso;
 
-//	private Collection<Ausencia> ausencias;
+	private Collection<Ausencia> ausencias;
 
 	private int trienios;
 
@@ -26,13 +26,13 @@ public class PersonaConPermiso extends Persona implements SolicitarPermiso {
 		this.permiso = permiso;
 	}
 
-//	public Collection<Ausencia> getAusencias() {
-//		return ausencias;
-//	}
-//
-//	public void setAusencias(Collection<Ausencia> ausencias) {
-//		this.ausencias = ausencias;
-//	}
+	public Collection<Ausencia> getAusencias() {
+		return ausencias;
+	}
+
+	public void setAusencias(Collection<Ausencia> ausencias) {
+		this.ausencias = ausencias;
+	}
 
 	public int getTrienios() {
 		return trienios;
@@ -55,7 +55,7 @@ public class PersonaConPermiso extends Persona implements SolicitarPermiso {
 
 		if (diasRestantes >= diasSolicitados) {
 			permiso.setDiasRestantes(diasRestantes -= diasSolicitados);
-//			ausencias.add(new AusenciaImpl(fechaInicio, fechaFin));
+			ausencias.add(new AusenciaImpl(fechaInicio, fechaFin));
 		}
 
 	}
