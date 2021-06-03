@@ -1,5 +1,6 @@
 package es.mde.ControlPersonalLIB.gestor;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -8,17 +9,17 @@ import es.mde.ControlPersonalLIB.personas.Persona;
 
 public class ListadoActividad {
 
-	private Date momentoControl;
+	private Instant momentoControl;
 	private Collection<Persona> listadoAsistentes;
 	private Collection<Persona> listadoFaltasJustificadas;
 	private Collection<FaltaALista> faltasALista;
 	private String actividad;
 
-	public Date getMomentoControl() {
+	public Instant getMomentoControl() {
 		return momentoControl;
 	}
 
-	public void setMomentoControl(Date momentoControl) {
+	public void setMomentoControl(Instant momentoControl) {
 		this.momentoControl = momentoControl;
 	}
 

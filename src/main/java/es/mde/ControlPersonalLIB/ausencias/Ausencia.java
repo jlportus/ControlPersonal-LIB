@@ -1,13 +1,13 @@
 package es.mde.ControlPersonalLIB.ausencias;
 
-import java.util.Date;
+import java.time.Instant;
 
 public interface Ausencia {
 
-	Date getFechaInicio();
-	Date getFechaFin();
-	void setFechaInicio(Date fechaInicio);
-	void setFechaFin(Date fechaFin);
+	Instant getFechaInicio();
+	Instant getFechaFin();
+	void setFechaInicio(Instant fechaInicio);
+	void setFechaFin(Instant fechaFin);
 	boolean isAutorizada();
 	
 }

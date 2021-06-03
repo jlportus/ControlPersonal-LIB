@@ -1,10 +1,8 @@
 package es.mde.ControlPersonalLIB.permisos;
 
-import java.util.Date;
-
-import es.mde.ControlPersonalLIB.ausencias.Ausencia;
+import java.time.Instant;
 
 public interface SolicitarPermiso {
 
-	void solicitarDia(Date fechaInicio, Date fechaFin, Permiso permiso);
+	void solicitarDia(Instant fechaInicio, Instant fechaFin, Permiso permiso);
 }

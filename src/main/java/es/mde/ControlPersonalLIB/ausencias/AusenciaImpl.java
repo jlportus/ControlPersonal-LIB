@@ -1,30 +1,30 @@
 package es.mde.ControlPersonalLIB.ausencias;
 
-import java.util.Date;
+import java.time.Instant;
 
 public class AusenciaImpl implements Ausencia {
 
-	private Date fechaInicio;
-	private Date fechaFin;
+	private Instant fechaInicio;
+	private Instant fechaFin;
 	private boolean autorizada;
 
 	@Override
-	public Date getFechaInicio() {
+	public Instant getFechaInicio() {
 		return this.fechaInicio;
 	}
 
 	@Override
-	public Date getFechaFin() {
+	public Instant getFechaFin() {
 		return this.fechaFin;
 	}
 
 	@Override
-	public void setFechaInicio(Date fechaInicio) {
+	public void setFechaInicio(Instant fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
 
 	@Override
-	public void setFechaFin(Date fechaFin) {
+	public void setFechaFin(Instant fechaFin) {
 		this.fechaFin = fechaFin;
 	}
 
@@ -40,7 +40,7 @@ public class AusenciaImpl implements Ausencia {
 	public AusenciaImpl() {
 	}
 
-	public AusenciaImpl(Date fechaInicio, Date fechaFin) {
+	public AusenciaImpl(Instant fechaInicio, Instant fechaFin) {
 		setFechaFin(fechaFin);
 		setFechaInicio(fechaInicio);
 	}

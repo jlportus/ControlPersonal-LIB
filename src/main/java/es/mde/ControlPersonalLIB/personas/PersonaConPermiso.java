@@ -1,5 +1,6 @@
 package es.mde.ControlPersonalLIB.personas;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -12,18 +13,18 @@ import es.mde.ControlPersonalLIB.permisos.SolicitarPermiso;
 
 public class PersonaConPermiso extends Persona implements SolicitarPermiso {
 
-	protected Collection<Permiso> permiso;
+	protected Collection<Permiso> permisos;
 
 	private Collection<Ausencia> ausencias;
 
 	private int trienios;
 
 	public Collection<Permiso> getPermiso() {
-		return permiso;
+		return permisos;
 	}
 
 	public void setPermiso(Collection<Permiso> permiso) {
-		this.permiso = permiso;
+		this.permisos = permiso;
 	}
 
 	public Collection<Ausencia> getAusencias() {
@@ -45,11 +46,12 @@ public class PersonaConPermiso extends Persona implements SolicitarPermiso {
 	public PersonaConPermiso() {
 		super();
 
-		this.permiso = new ArrayList<>();
+		this.permisos = new ArrayList<>();
+		this.ausencias = new ArrayList<>();
 	}
 
 	@Override
-	public void solicitarDia(Date fechaInicio, Date fechaFin, Permiso permiso) {
+	public void solicitarDia(Instant fechaInicio, Instant fechaFin, Permiso permiso) {
 		int diasSolicitados = fechaFin.compareTo(fechaInicio);
 		int diasRestantes = permiso.getDiasRestantes();
 
