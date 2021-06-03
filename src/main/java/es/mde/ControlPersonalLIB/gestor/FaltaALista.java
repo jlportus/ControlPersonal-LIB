@@ -7,4 +7,32 @@ public class FaltaALista {
 	private Persona persona;
 	private String motivo;
 	private boolean justificada;
+
+	public Persona getPersona() {
+		return persona;
+	}
+
+	public void setPersona(Persona persona) {
+		this.persona = persona;
+	}
+
+	public String getMotivo() {
+		return motivo;
+	}
+
+	public void setMotivo(String motivo) {
+		this.motivo = motivo;
+	}
+
+	public boolean isJustificada() {
+		return justificada;
+	}
+
+	public void setJustificada(boolean justificada) {
+		this.justificada = justificada;
+	}
+
+	public FaltaALista() {
+
+	}
 }

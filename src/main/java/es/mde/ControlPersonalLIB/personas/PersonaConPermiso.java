@@ -8,15 +8,15 @@ import java.util.HashSet;
 
 import es.mde.ControlPersonalLIB.ausencias.Ausencia;
 import es.mde.ControlPersonalLIB.ausencias.AusenciaImpl;
+import es.mde.ControlPersonalLIB.gestor.FaltaALista;
 import es.mde.ControlPersonalLIB.permisos.Permiso;
 import es.mde.ControlPersonalLIB.permisos.SolicitarPermiso;
 
 public class PersonaConPermiso extends Persona implements SolicitarPermiso {
 
 	protected Collection<Permiso> permisos;
-
 	private Collection<Ausencia> ausencias;
-
+	private Collection<FaltaALista> faltas;
 	private int trienios;
 
 	public Collection<Permiso> getPermiso() {
@@ -33,6 +33,22 @@ public class PersonaConPermiso extends Persona implements SolicitarPermiso {
 
 	public void setAusencias(Collection<Ausencia> ausencias) {
 		this.ausencias = ausencias;
+	}
+
+	public Collection<Permiso> getPermisos() {
+		return permisos;
+	}
+
+	public void setPermisos(Collection<Permiso> permisos) {
+		this.permisos = permisos;
+	}
+
+	public Collection<FaltaALista> getFaltas() {
+		return faltas;
+	}
+
+	public void setFaltas(Collection<FaltaALista> faltas) {
+		this.faltas = faltas;
 	}
 
 	public int getTrienios() {
