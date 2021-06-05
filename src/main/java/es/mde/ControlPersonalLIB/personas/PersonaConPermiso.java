@@ -78,4 +78,9 @@ public class PersonaConPermiso extends Persona implements SolicitarPermiso {
 
 	}
 
+	@Override
+	public String toString() {
+		return super.getNombre() + " [permisos=" + permisos + ", ausencias=" + ausencias;
+	}
+
 }

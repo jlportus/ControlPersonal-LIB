@@ -35,4 +35,11 @@ public class FaltaALista {
 	public FaltaALista() {
 
 	}
+
+	@Override
+	public String toString() {
+		return "FaltaALista [persona=" + persona + ", motivo=" + motivo + ", justificada=" + justificada + "]";
+	}
+	
+	
 }

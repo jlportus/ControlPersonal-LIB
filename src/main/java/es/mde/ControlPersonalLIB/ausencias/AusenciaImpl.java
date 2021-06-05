@@ -45,4 +45,11 @@ public class AusenciaImpl implements Ausencia {
 		setFechaInicio(fechaInicio);
 	}
 
+	@Override
+	public String toString() {
+		return "AusenciaImpl [fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", autorizada=" + autorizada
+				+ "]";
+	}
+
+	
 }

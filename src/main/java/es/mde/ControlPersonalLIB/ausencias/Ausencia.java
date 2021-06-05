@@ -9,5 +9,6 @@ public interface Ausencia {
 	void setFechaInicio(Instant fechaInicio);
 	void setFechaFin(Instant fechaFin);
 	boolean isAutorizada();
+	void setAutorizada(boolean autorizada);
 	
 }

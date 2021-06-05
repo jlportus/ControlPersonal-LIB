@@ -64,4 +64,9 @@ public class Actividad {
 		faltasALista = new ArrayList<>();
 	}
 
+	public Actividad(Instant fecha, String actividad) {
+		this();
+		this.momentoControl = fecha;
+		this.actividad = actividad;
+	}
 }
