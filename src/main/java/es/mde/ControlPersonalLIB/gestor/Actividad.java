@@ -69,4 +69,13 @@ public class Actividad {
 		this.momentoControl = fecha;
 		this.actividad = actividad;
 	}
+
+	@Override
+	public String toString() {
+		return "Actividad [actividad=" + actividad + ", momentoControl=" + momentoControl + ", listadoAsistentes="
+				+ listadoAsistentes + ", listadoFaltasJustificadas=" + listadoFaltasJustificadas + ", faltasALista="
+				+ faltasALista + "]";
+	}
+	
+	
 }
