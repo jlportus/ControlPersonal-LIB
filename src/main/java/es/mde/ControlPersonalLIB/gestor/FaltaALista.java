@@ -36,10 +36,16 @@ public class FaltaALista {
 
 	}
 
+	public FaltaALista(Persona persona, String motivo, boolean justificada) {
+		super();
+		this.persona = persona;
+		this.motivo = motivo;
+		this.justificada = justificada;
+	}
+
 	@Override
 	public String toString() {
 		return "FaltaALista [persona=" + persona + ", motivo=" + motivo + ", justificada=" + justificada + "]";
 	}
-	
-	
+
 }

@@ -10,5 +10,5 @@ public interface Ausencia {
 	void setFechaFin(Instant fechaFin);
 	boolean isAutorizada();
 	void setAutorizada(boolean autorizada);
-	
+	String getMotivo();
 }

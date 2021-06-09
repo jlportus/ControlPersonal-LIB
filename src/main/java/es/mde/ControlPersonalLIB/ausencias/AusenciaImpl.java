@@ -7,6 +7,7 @@ public class AusenciaImpl implements Ausencia {
 	private Instant fechaInicio;
 	private Instant fechaFin;
 	private boolean autorizada;
+	private String motivo = "";
 
 	@Override
 	public Instant getFechaInicio() {
@@ -37,6 +38,15 @@ public class AusenciaImpl implements Ausencia {
 		this.autorizada = autorizada;
 	}
 
+	public void setMotivo(String motivo) {
+		this.motivo = motivo;
+	}
+
+	@Override
+	public String getMotivo() {
+		return this.motivo;
+	}
+
 	public AusenciaImpl() {
 	}
 
@@ -51,5 +61,4 @@ public class AusenciaImpl implements Ausencia {
 				+ "]";
 	}
 
-	
 }

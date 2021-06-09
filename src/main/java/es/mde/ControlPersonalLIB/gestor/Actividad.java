@@ -14,7 +14,7 @@ public class Actividad {
 
 	private Instant momentoControl;
 	private Collection<Persona> listadoAsistentes;
-	private Map<Persona, Ausencia> listadoFaltasJustificadas;
+	private Collection<FaltaALista> listadoFaltasJustificadas;
 	private Collection<FaltaALista> faltasALista;
 	private String actividad;
 
@@ -34,11 +34,11 @@ public class Actividad {
 		this.listadoAsistentes = listadoAsistentes;
 	}
 
-	public Map<Persona, Ausencia> getListadoFaltasJustificadas() {
+	public Collection<FaltaALista> getListadoFaltasJustificadas() {
 		return listadoFaltasJustificadas;
 	}
 
-	public void setListadoFaltasJustificadas(Map<Persona, Ausencia> listadoFaltasJustificadas) {
+	public void setListadoFaltasJustificadas(Collection<FaltaALista> listadoFaltasJustificadas) {
 		this.listadoFaltasJustificadas = listadoFaltasJustificadas;
 	}
 
@@ -60,7 +60,7 @@ public class Actividad {
 
 	public Actividad() {
 		listadoAsistentes = new ArrayList<>();
-		listadoFaltasJustificadas = new HashMap<Persona, Ausencia>();
+		listadoFaltasJustificadas = new ArrayList<>();
 		faltasALista = new ArrayList<>();
 	}
 

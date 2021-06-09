@@ -4,7 +4,7 @@ import java.time.Instant;
 import java.util.Collection;
 
 import es.mde.ControlPersonalLIB.ausencias.Ausencia;
-import es.mde.ControlPersonalLIB.personas.Persona;
+import es.mde.ControlPersonalLIB.ausencias.AusenciaImpl;
 import es.mde.ControlPersonalLIB.personas.PersonaConPermiso;
 
 public abstract class Gestor {
@@ -16,8 +16,9 @@ public abstract class Gestor {
 			if (!isAsistente(personaConPermiso, fecha)) {
 				listadoActividad.getListadoAsistentes().add(personaConPermiso);
 			} else {
-				listadoActividad.getListadoFaltasJustificadas().put(personaConPermiso,
-						Gestor.getAusencia(personaConPermiso, fecha));
+
+				listadoActividad.getListadoFaltasJustificadas().add(
+						new FaltaALista(personaConPermiso, getAusencia(personaConPermiso, fecha).getMotivo(), true));
 			}
 		}
 
@@ -37,7 +38,7 @@ public abstract class Gestor {
 	}
 
 	public static Ausencia getAusencia(PersonaConPermiso persona, Instant fecha) {
-		Ausencia ausencia = null;
+		Ausencia ausencia = new AusenciaImpl();
 		for (Ausencia a : persona.getAusencias()) {
 			if (!a.isAutorizada() && fecha.isAfter(a.getFechaInicio()) && fecha.isBefore(a.getFechaFin())) {
 				ausencia = a;
