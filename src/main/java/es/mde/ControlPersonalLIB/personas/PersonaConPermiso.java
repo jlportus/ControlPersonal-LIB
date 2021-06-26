@@ -8,6 +8,7 @@ import java.util.HashSet;
 
 import es.mde.ControlPersonalLIB.ausencias.Ausencia;
 import es.mde.ControlPersonalLIB.ausencias.AusenciaImpl;
+import es.mde.ControlPersonalLIB.ausencias.tipoAusencias.Servicio;
 import es.mde.ControlPersonalLIB.gestor.FaltaALista;
 import es.mde.ControlPersonalLIB.permisos.Permiso;
 import es.mde.ControlPersonalLIB.permisos.SolicitarPermiso;
@@ -17,15 +18,7 @@ public class PersonaConPermiso extends Persona implements SolicitarPermiso {
 	protected Collection<Permiso> permisos;
 	private Collection<Ausencia> ausencias;
 	private Collection<FaltaALista> faltas;
-	private int trienios;
-
-	public Collection<Permiso> getPermiso() {
-		return permisos;
-	}
-
-	public void setPermiso(Collection<Permiso> permiso) {
-		this.permisos = permiso;
-	}
+//	private int trienios;
 
 	public Collection<Ausencia> getAusencias() {
 		return ausencias;
@@ -51,13 +44,13 @@ public class PersonaConPermiso extends Persona implements SolicitarPermiso {
 		this.faltas = faltas;
 	}
 
-	public int getTrienios() {
-		return trienios;
-	}
-
-	public void setTrienios(int trienios) {
-		this.trienios = trienios;
-	}
+//	public int getTrienios() {
+//		return trienios;
+//	}
+//
+//	public void setTrienios(int trienios) {
+//		this.trienios = trienios;
+//	}
 
 	public PersonaConPermiso() {
 		super();
@@ -76,6 +69,13 @@ public class PersonaConPermiso extends Persona implements SolicitarPermiso {
 			ausencias.add(new AusenciaImpl(fechaInicio, fechaFin));
 		}
 
+	}
+
+	void addAusencia(Ausencia ausencia) {
+		this.ausencias.add(ausencia);
+		if (ausencia.getClass() == Servicio.class) {
+			((Servicio) ausencia).comprobarSiGeneraDia(this);
+		}
 	}
 
 	@Override

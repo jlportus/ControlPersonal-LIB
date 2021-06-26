@@ -4,12 +4,14 @@ public class PermisoImpl implements Permiso {
 
 	private int diasPermisoCorresponden;
 	private int diasPermisoRestantes;
+	private String tipo;
 
 	@Override
 	public int getDiasPermisoCorresponden() {
 		return diasPermisoCorresponden;
 	}
-	
+
+	@Override
 	public void setDiasPermisoCorresponden(int diasPermisoCorresponden) {
 		this.diasPermisoCorresponden = diasPermisoCorresponden;
 	}
@@ -25,7 +27,19 @@ public class PermisoImpl implements Permiso {
 		this.diasPermisoRestantes = dias;
 	}
 
-	public PermisoImpl() {
-		
+	@Override
+	public String getTipo() {
+		return this.tipo;
 	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public PermisoImpl() {
+
+	}
+
+	
+
 }

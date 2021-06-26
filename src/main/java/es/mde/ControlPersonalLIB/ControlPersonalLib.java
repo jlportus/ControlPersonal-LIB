@@ -6,6 +6,7 @@ import java.util.Collection;
 
 import es.mde.ControlPersonalLIB.ausencias.Ausencia;
 import es.mde.ControlPersonalLIB.ausencias.AusenciaImpl;
+import es.mde.ControlPersonalLIB.ausencias.tipoAusencias.Servicio;
 import es.mde.ControlPersonalLIB.gestor.Actividad;
 import es.mde.ControlPersonalLIB.gestor.Gestor;
 import es.mde.ControlPersonalLIB.permisos.Permiso;
@@ -60,6 +61,7 @@ public class ControlPersonalLib {
 //		actividad.getListadoAsistentes().forEach(System.out::println);
 //		System.out.println("Faltan = "+actividad.getListadoFaltasJustificadas());
 		
+//		Servicio servicio = new Servicio();
 		
 	}
 

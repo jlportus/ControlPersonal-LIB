@@ -2,6 +2,7 @@ package es.mde.ControlPersonalLIB.gestor;
 
 import java.time.Instant;
 import java.util.Collection;
+import java.util.List;
 
 import es.mde.ControlPersonalLIB.ausencias.Ausencia;
 import es.mde.ControlPersonalLIB.ausencias.AusenciaImpl;
@@ -10,7 +11,7 @@ import es.mde.ControlPersonalLIB.personas.PersonaConPermiso;
 public abstract class Gestor {
 
 	public static Actividad generarListadoActividad(Instant fecha, String actividad,
-			Collection<PersonaConPermiso> listado) {
+			List<PersonaConPermiso> listado) {
 		Actividad listadoActividad = new Actividad(fecha, actividad);
 		for (PersonaConPermiso personaConPermiso : listado) {
 			if (!isAsistente(personaConPermiso, fecha)) {

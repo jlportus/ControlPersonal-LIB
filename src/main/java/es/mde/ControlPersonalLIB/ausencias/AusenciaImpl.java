@@ -1,13 +1,19 @@
 package es.mde.ControlPersonalLIB.ausencias;
 
 import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+
+import es.mde.ControlPersonalLIB.personas.PersonaConPermiso;
 
 public class AusenciaImpl implements Ausencia {
+
+	
 
 	private Instant fechaInicio;
 	private Instant fechaFin;
 	private boolean autorizada;
 	private String motivo = "";
+	private PersonaConPermiso persona;
 
 	@Override
 	public Instant getFechaInicio() {
@@ -47,6 +53,15 @@ public class AusenciaImpl implements Ausencia {
 		return this.motivo;
 	}
 
+	@Override
+	public void setPersona(PersonaConPermiso persona) {
+		this.persona = persona;
+	}
+
+	public PersonaConPermiso getPersona() {
+		return persona;
+	}
+
 	public AusenciaImpl() {
 	}
 
@@ -61,4 +76,7 @@ public class AusenciaImpl implements Ausencia {
 				+ "]";
 	}
 
+	public static long calcularDuracion(Instant fechaInicio, Instant fechaFin) {
+		return fechaInicio.until(fechaFin, ChronoUnit.DAYS);
+	}
 }
