@@ -1,29 +1,9 @@
 package es.mde.ControlPersonalLIB.ausencias.tipoAusencias;
 
-import java.time.Instant;
+public interface ComisionServicio {
 
-import es.mde.ControlPersonalLIB.ausencias.AusenciaImpl;
+	String getLugar();
 
-public class ComisionServicio extends AusenciaImpl {
+	void setLugar(String lugar);
 
-	private String lugar;
-	
-	public String getLugar() {
-		return lugar;
-	}
-	
-	public void setLugar(String lugar) {
-		this.lugar = lugar;
-	}
-	
-	public ComisionServicio() {
-		super();
-	}
-
-	public ComisionServicio(Instant fechaInicio, Instant fechaFin, String lugar) {
-		super(fechaInicio, fechaFin);
-		setLugar(lugar);
-	}
-	
-	
 }

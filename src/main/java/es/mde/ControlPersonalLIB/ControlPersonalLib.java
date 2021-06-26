@@ -6,7 +6,7 @@ import java.util.Collection;
 
 import es.mde.ControlPersonalLIB.ausencias.Ausencia;
 import es.mde.ControlPersonalLIB.ausencias.AusenciaImpl;
-import es.mde.ControlPersonalLIB.ausencias.tipoAusencias.Servicio;
+import es.mde.ControlPersonalLIB.ausencias.tipoAusencias.ServicioImpl;
 import es.mde.ControlPersonalLIB.gestor.Actividad;
 import es.mde.ControlPersonalLIB.gestor.Gestor;
 import es.mde.ControlPersonalLIB.permisos.Permiso;

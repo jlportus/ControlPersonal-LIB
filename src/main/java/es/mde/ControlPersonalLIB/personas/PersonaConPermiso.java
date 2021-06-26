@@ -9,6 +9,7 @@ import java.util.HashSet;
 import es.mde.ControlPersonalLIB.ausencias.Ausencia;
 import es.mde.ControlPersonalLIB.ausencias.AusenciaImpl;
 import es.mde.ControlPersonalLIB.ausencias.tipoAusencias.Servicio;
+import es.mde.ControlPersonalLIB.ausencias.tipoAusencias.ServicioImpl;
 import es.mde.ControlPersonalLIB.gestor.FaltaALista;
 import es.mde.ControlPersonalLIB.permisos.Permiso;
 import es.mde.ControlPersonalLIB.permisos.SolicitarPermiso;
@@ -73,7 +74,7 @@ public class PersonaConPermiso extends Persona implements SolicitarPermiso {
 
 	void addAusencia(Ausencia ausencia) {
 		this.ausencias.add(ausencia);
-		if (ausencia.getClass() == Servicio.class) {
+		if (ausencia.getClass() == ServicioImpl.class) {
 			((Servicio) ausencia).comprobarSiGeneraDia(this);
 		}
 	}
