@@ -4,7 +4,7 @@ import es.mde.ControlPersonalLIB.personas.PersonaConPermiso;
 
 public interface Servicio {
 
-	TipoServicio getTipo();
+	String getTipo();
 
 	void setTipo(String tipo);
 

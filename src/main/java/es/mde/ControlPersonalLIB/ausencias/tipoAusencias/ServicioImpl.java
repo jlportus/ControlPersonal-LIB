@@ -13,8 +13,8 @@ public class ServicioImpl extends AusenciaImpl implements Servicio {
 	private TipoServicio tipo;
 
 	@Override
-	public TipoServicio getTipo() {
-		return tipo;
+	public String getTipo() {
+		return tipo.toString();
 	}
 
 	@Override
@@ -50,9 +50,9 @@ public class ServicioImpl extends AusenciaImpl implements Servicio {
 	@Override
 	public void comprobarSiGeneraDia(PersonaConPermiso persona) {
 		Long duracionLong = calcularDuracion(getFechaInicio(), getFechaFin());
-		if (duracionLong >=1 && getTipo() == TipoServicio.SEGURIDAD  ) {
+		if (duracionLong >=1 && getTipo() == TipoServicio.SEGURIDAD.toString()  ) {
 			generaDiaPermiso(persona);
-		}  else if ( duracionLong >=2 && getTipo() == TipoServicio.ORDEN  ){
+		}  else if ( duracionLong >=2 && getTipo() == TipoServicio.ORDEN.toString()  ){
 			generaDiaPermiso(persona);
 		}
 	}

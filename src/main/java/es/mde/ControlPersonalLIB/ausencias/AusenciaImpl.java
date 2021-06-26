@@ -7,8 +7,6 @@ import es.mde.ControlPersonalLIB.personas.PersonaConPermiso;
 
 public class AusenciaImpl implements Ausencia {
 
-	
-
 	private Instant fechaInicio;
 	private Instant fechaFin;
 	private boolean autorizada;
